@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "9b143288-11d6-4bd4-9207-f7cf7cebdb13",
+		"name": "GPT Sales Component - App Builder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "687471"
+	},
+	"item": [
+		{
+			"name": "Publish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"c108f7b8-75f1-42a2-986b-9f86af357a00\",\n    \"product_recommendation_unit\": \"unitid\",\n    \"content_type_uid\": \"2\",\n    \"delivery_content\": [\n        \"image\",\n        \"title\",\n        \"description\",\n        \"benefits\",\n        \"features\",\n        \"price\",\n        \"subtitle\"\n    ],\n    \"sales_target\": {\n        \"qty\": 500,\n        \"days\": 60\n    },\n    \"store_code\": \"germany_de\",\n    \"sku\": \"gum-soft-picks-pro-interdental-cleaner\",\n//    \"product_recommendations_unit\": \"5bbeb277-6449-4892-bc92-3be520fe175c\",\n    \"enable_auto_validation\": true,\n    \"enable_auto_switch\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}gpt-sales-component/publishComponent",
+					"host": [
+						"{{URL}}gpt-sales-component"
+					],
+					"path": [
+						"publishComponent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}gpt-sales-component/listOfComponents",
+					"host": [
+						"{{URL}}gpt-sales-component"
+					],
+					"path": [
+						"listOfComponents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get By UUID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}gpt-sales-component/getByUuid/c108f7b8-75f1-42a2-986b-9f86af357a00",
+					"host": [
+						"{{URL}}gpt-sales-component"
+					],
+					"path": [
+						"getByUuid",
+						"c108f7b8-75f1-42a2-986b-9f86af357a00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate content",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}gpt-sales-component/generateContent",
+					"host": [
+						"{{URL}}gpt-sales-component"
+					],
+					"path": [
+						"generateContent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRecommendationsList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "storeViewCode",
+						"value": "de",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"storeViewCode\":\"de\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}gpt-sales-component/getRecommendationsList",
+					"host": [
+						"{{URL}}gpt-sales-component"
+					],
+					"path": [
+						"getRecommendationsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductRecommendations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "storeViewCode",
+						"value": "de",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"environmentId\": \"58c4ff6c-f633-455f-b0d5-8f795f839246\",\n    \"storeViewCode\": \"de\",\n    \"websiteCode\": \"tessloff\",\n    \"unitId\": \"5bbeb277-6449-4892-bc92-3be520fe175c\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}gpt-sales-component/getProductRecommendations",
+					"host": [
+						"{{URL}}gpt-sales-component"
+					],
+					"path": [
+						"getProductRecommendations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "recs_open",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"environmentId\": \"58c4ff6c-f633-455f-b0d5-8f795f839246\",\n    \"storeViewCode\": \"de\",\n    \"websiteCode\": \"tessloff\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://commerce.adobe.io/recs/v1/precs/preconfigured/units/3de52445-d1f7-44d7-b2d2-4e997d7bf528",
+					"protocol": "https",
+					"host": [
+						"commerce",
+						"adobe",
+						"io"
+					],
+					"path": [
+						"recs",
+						"v1",
+						"precs",
+						"preconfigured",
+						"units",
+						"3de52445-d1f7-44d7-b2d2-4e997d7bf528"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
